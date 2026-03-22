@@ -1,0 +1,1 @@
+An AI-powered application designed to assist users with court-related queries, legal guidance, and case insights in a simple, accessible, and multilingual format.This tool is not a replacement for a lawyer, but a support system to simplify legal information for the general public.
