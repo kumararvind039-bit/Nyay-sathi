@@ -3,7 +3,30 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Nyay Saathi — न्याय साथी</title>
+<title>Nyay Saathi — न्याय साथी | Free AI Legal Guidance for Every Indian</title>
+<meta name="description" content="Free AI legal guidance for every Indian. Describe your problem in any language — find out if your case is fit for court, your win chances, and exact alternatives. No lawyer needed to start."/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://nyay-sathi-9k61.vercel.app"/>
+<meta property="og:title" content="Nyay Saathi — न्याय साथी | Free AI Legal Guidance"/>
+<meta property="og:description" content="Should you go to court? Get honest AI-powered legal guidance in Hindi, English, Assamese and 19 more Indian languages. 100% free. No registration. Works on any phone."/>
+<meta property="og:image" content="https://nyay-sathi-9k61.vercel.app/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="Nyay Saathi"/>
+<meta property="og:locale" content="en_IN"/>
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="https://nyay-sathi-9k61.vercel.app"/>
+<meta name="twitter:title" content="Nyay Saathi — Free AI Legal Guidance for Every Indian"/>
+<meta name="twitter:description" content="Should you go to court? Get honest guidance in your language. 100% free. No registration."/>
+<meta name="twitter:image" content="https://nyay-sathi-9k61.vercel.app/og-image.png"/>
+
+<!-- WhatsApp / general -->
+<meta name="theme-color" content="#E8650A"/>
+<link rel="canonical" href="https://nyay-sathi-9k61.vercel.app"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@400;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -283,30 +306,40 @@ footer a:hover{text-decoration:underline}
     <span class="ex-chip" onclick="fillEx('medical')">🏥 Medical negligence</span>
     <span class="ex-chip" onclick="fillEx('ration')">🍚 Ration/govt benefit denied</span>
     <span class="ex-chip" onclick="fillEx('harassment')">🚨 Workplace harassment</span>
+    <span class="ex-chip" onclick="fillEx('digital_fir')">📱 FIR for social media post</span>
+    <span class="ex-chip" onclick="fillEx('land_acq')">🏗 Land acquired without compensation</span>
+    <span class="ex-chip" onclick="fillEx('cyber_fraud')">💻 Online fraud / cyber crime</span>
+    <span class="ex-chip" onclick="fillEx('domestic_v')">🏡 Domestic violence</span>
   </div>
-  <button class="btn" onclick="goS2()">Continue — Select Problem Type →</button>
-</div>
-<div class="card" id="s2" style="display:none">
-  <div class="card-title">📂 What type of problem is this?</div>
-  <div class="card-sub">Select the closest category so we find the most relevant court judgments.</div>
-  <div class="cat-grid">
-    <div class="cat-btn" onclick="pickCat(this,'service')"><span class="ci">🏛</span><span class="cn">Service / Job</span><span class="cv">नौकरी / सेवा</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'property')"><span class="ci">🏠</span><span class="cn">Property / Land</span><span class="cv">संपत्ति / जमीन</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'consumer')"><span class="ci">🛒</span><span class="cn">Consumer Rights</span><span class="cv">उपभोक्ता अधिकार</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'family')"><span class="ci">👨‍👩‍👧</span><span class="cn">Family / Marriage</span><span class="cv">परिवार / विवाह</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'criminal')"><span class="ci">🚨</span><span class="cn">Criminal / FIR</span><span class="cv">आपराधिक मामला</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'pension')"><span class="ci">📋</span><span class="cn">Pension / Pay</span><span class="cv">पेंशन / वेतन</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'rent')"><span class="ci">🔑</span><span class="cn">Rent / Tenancy</span><span class="cv">किराया / किरायेदार</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'labour')"><span class="ci">👷</span><span class="cn">Labour / Wages</span><span class="cv">मजदूरी / श्रम</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'cheque')"><span class="ci">🏦</span><span class="cn">Cheque Bounce</span><span class="cv">चेक बाउंस</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'medical')"><span class="ci">🏥</span><span class="cn">Medical</span><span class="cv">चिकित्सा लापरवाही</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'government')"><span class="ci">🎫</span><span class="cn">Govt Benefit</span><span class="cv">सरकारी योजना</span></div>
-    <div class="cat-btn" onclick="pickCat(this,'other')"><span class="ci">⚖️</span><span class="cn">Other</span><span class="cv">अन्य</span></div>
+
+  <!-- OPTIONAL CATEGORY -->
+  <div style="margin-bottom:16px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--t3);margin-bottom:6px">
+      📂 Problem Type — <span style="color:var(--gr);font-weight:700">Optional</span>
+      <span style="font-size:10px;font-weight:400;color:var(--t4);margin-left:4px">(Selecting helps get better guidance. You can skip and proceed directly.)</span>
+    </div>
+    <div class="cat-grid" style="margin-bottom:0">
+      <div class="cat-btn" onclick="pickCat(this,'service')"><span class="ci">🏛</span><span class="cn">Service / Job</span><span class="cv">नौकरी / सेवा</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'property')"><span class="ci">🏠</span><span class="cn">Property / Land</span><span class="cv">संपत्ति / जमीन</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'consumer')"><span class="ci">🛒</span><span class="cn">Consumer Rights</span><span class="cv">उपभोक्ता अधिकार</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'family')"><span class="ci">👨‍👩‍👧</span><span class="cn">Family / Marriage</span><span class="cv">परिवार / विवाह</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'criminal')"><span class="ci">🚨</span><span class="cn">Criminal / FIR</span><span class="cv">आपराधिक मामला</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'pension')"><span class="ci">📋</span><span class="cn">Pension / Pay</span><span class="cv">पेंशन / वेतन</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'rent')"><span class="ci">🔑</span><span class="cn">Rent / Tenancy</span><span class="cv">किराया / किरायेदार</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'labour')"><span class="ci">👷</span><span class="cn">Labour / Wages</span><span class="cv">मजदूरी / श्रम</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'cheque')"><span class="ci">🏦</span><span class="cn">Cheque Bounce</span><span class="cv">चेक बाउंस</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'medical')"><span class="ci">🏥</span><span class="cn">Medical</span><span class="cv">चिकित्सा लापरवाही</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'government')"><span class="ci">🎫</span><span class="cn">Govt Benefit</span><span class="cv">सरकारी योजना</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'digital')"><span class="ci">📱</span><span class="cn">Digital / Social Media</span><span class="cv">ऑनलाइन / सोशल मीडिया</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'land_acquisition')"><span class="ci">🏗</span><span class="cn">Land Acquisition</span><span class="cv">भूमि अधिग्रहण</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'cyber')"><span class="ci">💻</span><span class="cn">Cyber Crime</span><span class="cv">साइबर अपराध</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'domestic')"><span class="ci">🏡</span><span class="cn">Domestic Violence</span><span class="cv">घरेलू हिंसा</span></div>
+      <div class="cat-btn" onclick="pickCat(this,'other')"><span class="ci">⚖️</span><span class="cn">Other / Not Sure</span><span class="cv">अन्य / पता नहीं</span></div>
+    </div>
+    <div id="catSelected" style="font-size:12px;color:var(--gr);font-weight:600;margin-top:8px;min-height:18px"></div>
   </div>
-  <div class="btn-row">
-    <button class="btn-out" onclick="goBack()">← Back</button>
-    <button class="btn" id="aBtn" onclick="doAnalysis()" disabled>🔍 Get My Guidance</button>
-  </div>
+
+  <button class="btn" onclick="doAnalysis()">🔍 Get My Guidance →</button>
 </div>
 <div class="result" id="result">
   <div class="vcard" id="vcard"><div class="vicon" id="vicon"></div><div><div class="vtitle" id="vtitle"></div><div class="vsub" id="vsub"></div></div></div>
@@ -353,7 +386,7 @@ footer a:hover{text-decoration:underline}
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const LANGS=[{c:'en',n:'English',e:'English'},{c:'hi',n:'हिंदी',e:'Hindi'},{c:'as',n:'অসমীয়া',e:'Assamese'},{c:'bn',n:'বাংলা',e:'Bengali'},{c:'ta',n:'தமிழ்',e:'Tamil'},{c:'te',n:'తెలుగు',e:'Telugu'},{c:'mr',n:'मराठी',e:'Marathi'},{c:'gu',n:'ગુજરાતી',e:'Gujarati'},{c:'kn',n:'ಕನ್ನಡ',e:'Kannada'},{c:'ml',n:'മലയാളം',e:'Malayalam'},{c:'pa',n:'ਪੰਜਾਬੀ',e:'Punjabi'},{c:'or',n:'ଓଡ଼ିଆ',e:'Odia'},{c:'ur',n:'اردو',e:'Urdu'},{c:'mai',n:'मैथिली',e:'Maithili'},{c:'kok',n:'कोंकणी',e:'Konkani'},{c:'mni',n:'মৈতৈলোন্',e:'Manipuri'},{c:'ks',n:'کٲشُر',e:'Kashmiri'},{c:'doi',n:'डोगरी',e:'Dogri'},{c:'ne',n:'नेपाली',e:'Nepali'},{c:'sd',n:'سنڌي',e:'Sindhi'},{c:'sat',n:'ᱥᱟᱱᱛᱟᱲᱤ',e:'Santali'},{c:'bo',n:'बड़ो',e:'Bodo'}];
-const EXAMPLES={deposit:'My landlord collected ₹40,000 as security deposit when I rented his flat. I vacated 8 months ago after giving proper 1-month notice. He is refusing to return the deposit and says there was damage but shows no proof. I have the rent agreement and all rent receipts.',salary:'I worked as an accountant in a private company for 3 years. They stopped paying my salary 4 months ago. Total dues are ₹1,80,000. When I asked, the owner threatened to file a false case against me. I have appointment letter and salary slips for previous months.',property:'My neighbour has built a wall encroaching 200 square feet of my registered land. I have a registered sale deed from 1998 and a government survey map showing the boundary. He is threatening me when I raise the issue.',consumer:'I bought a refrigerator for ₹28,000 in January. It stopped cooling after 3 months. The company service centre visited 4 times but could not fix it. They are refusing to replace or refund saying warranty does not cover this. I have the original invoice and warranty card.',transfer:'I am a government school teacher in Guwahati. I was suddenly transferred to a remote area just 4 months after my last transfer, without any administrative reason. I have 18 years of service and a clean record. I believe it is a punishment transfer.',pension:'My father retired from State Government after 32 years of service. It has been 16 months but his pension has not started. All papers including Form 5 and Form 7 were submitted 15 months ago. The treasury office says it is pending but gives no date.',cheque:'I lent ₹75,000 to my business partner. He gave me a post-dated cheque. When I deposited it the cheque bounced with insufficient funds. I sent him a legal notice 25 days ago but he has not paid. I have the original cheque and bank return memo.',medical:'My mother was operated in a private hospital for gallstones. Due to the doctor\'s negligence, a surgical instrument was left inside her body. She had severe pain and needed a second surgery. The hospital is denying negligence. I have all hospital bills and medical records.',ration:'My family is BPL and entitled to subsidised ration. The local ration dealer has not given us ration for 5 months saying our name was deleted. We have our old ration card. The Block Development Officer\'s office is not responding.',harassment:'I am a woman working in a private company. My senior manager has been sexually harassing me for 6 months. When I complained to HR, they ignored it and instead reduced my responsibilities. I have screenshots of messages.'};
+const EXAMPLES={deposit:'My landlord collected ₹40,000 as security deposit when I rented his flat. I vacated 8 months ago after giving proper 1-month notice. He is refusing to return the deposit and says there was damage but shows no proof. I have the rent agreement and all rent receipts.',salary:'I worked as an accountant in a private company for 3 years. They stopped paying my salary 4 months ago. Total dues are ₹1,80,000. When I asked, the owner threatened to file a false case against me. I have appointment letter and salary slips for previous months.',property:'My neighbour has built a wall encroaching 200 square feet of my registered land. I have a registered sale deed from 1998 and a government survey map showing the boundary. He is threatening me when I raise the issue.',consumer:'I bought a refrigerator for ₹28,000 in January. It stopped cooling after 3 months. The company service centre visited 4 times but could not fix it. They are refusing to replace or refund saying warranty does not cover this. I have the original invoice and warranty card.',transfer:'I am a government school teacher in Guwahati. I was suddenly transferred to a remote area just 4 months after my last transfer, without any administrative reason. I have 18 years of service and a clean record. I believe it is a punishment transfer.',pension:'My father retired from State Government after 32 years of service. It has been 16 months but his pension has not started. All papers including Form 5 and Form 7 were submitted 15 months ago. The treasury office says it is pending but gives no date.',cheque:'I lent ₹75,000 to my business partner. He gave me a post-dated cheque. When I deposited it the cheque bounced with insufficient funds. I sent him a legal notice 25 days ago but he has not paid. I have the original cheque and bank return memo.',medical:'My mother was operated in a private hospital for gallstones. Due to the doctor\'s negligence, a surgical instrument was left inside her body. She had severe pain and needed a second surgery. The hospital is denying negligence. I have all hospital bills and medical records.',ration:'My family is BPL and entitled to subsidised ration. The local ration dealer has not given us ration for 5 months saying our name was deleted. We have our old ration card. The Block Development Officer\'s office is not responding.',harassment:'I am a woman working in a private company. My senior manager has been sexually harassing me for 6 months. When I complained to HR, they ignored it and instead reduced my responsibilities. I have screenshots of messages.',digital_fir:'I am a content creator making short videos on political and social issues. Last month I made a video based on a news article about a politician. I did not make any personal allegations — I only reported what was already published. After 5 days I received a call from a police station in another state 1500 km away saying an FIR has been filed against me under IT Act Section 66(d) and BNS Section 356 for defamation. I have the original news article I referenced. I did not impersonate anyone or make false statements of my own.',land_acq:'The state government has acquired 2 acres of my agricultural land for a highway project. The acquisition notice was issued 2 years ago. The compensation offered is ₹8 lakh but the market value is at least ₹45 lakh per acre. I was not properly informed about the hearing process. I have the land records and the acquisition notice.',cyber_fraud:'I received a call from someone claiming to be from my bank. They said my account was being blocked and asked me to share an OTP to verify my identity. I shared the OTP and within minutes ₹92,000 was transferred from my account. I immediately called the bank but they said the transaction is done. I have the call recording and transaction SMS.',domestic_v:'My husband and his family have been physically and mentally abusing me for 2 years. He beats me regularly and his mother and sister insult me daily. He has thrown me out of the house twice. I have two children aged 4 and 7. I have no income of my own. I want protection and maintenance for myself and my children.'};
 let lang='en',category=null,files=[],mediaRec=null,recChunks=[],isRec=false,loadT=null;
 function openLang(){document.getElementById('lgrid').innerHTML=LANGS.map(l=>`<div class="lopt${l.c===lang?' sel':''}" onclick="pickLang('${l.c}',this)"><span class="lnative">${l.n}</span><div class="len">${l.e}</div></div>`).join('');document.getElementById('lm').classList.add('open')}
 function pickLang(c,el){lang=c;document.querySelectorAll('.lopt').forEach(e=>e.classList.remove('sel'));el.classList.add('sel')}
@@ -367,18 +400,47 @@ async function toggleMic(){if(isRec){stopRec();return}if(!navigator.mediaDevices
 function stopRec(){if(mediaRec&&mediaRec.state!=='inactive')mediaRec.stop();isRec=false;document.getElementById('micBtn').className='itool';document.getElementById('micBtn').textContent='🎤 Speak'}
 function doTranscribe(){setVS('🔄 Processing speech…');if(!('webkitSpeechRecognition'in window||'SpeechRecognition'in window)){setVS('⚠️ Auto-transcription not available. Please use Chrome on Android for voice input, or type your problem.');return}const SR=window.SpeechRecognition||window.webkitSpeechRecognition;const r=new SR();const lmap={hi:'hi-IN',en:'en-IN',as:'as-IN',bn:'bn-IN',ta:'ta-IN',te:'te-IN',mr:'mr-IN',gu:'gu-IN',kn:'kn-IN',ml:'ml-IN',pa:'pa-IN',or:'or-IN',ur:'ur-IN',ne:'ne-NP'};r.lang=lmap[lang]||'hi-IN';r.continuous=false;r.interimResults=false;r.onresult=e=>{const t=e.results[0][0].transcript;const ta=document.getElementById('sitTa');ta.value=(ta.value?ta.value+' ':'')+t;onInput();setVS('✅ Captured: "'+t.substring(0,70)+(t.length>70?'…':'')+'"')};r.onerror=()=>setVS('⚠️ Could not transcribe. Please type your problem.');r.start()}
 function setVS(m){document.getElementById('vstat').textContent=m}
-function goS2(){const t=document.getElementById('sitTa').value.trim();if(t.length<20){alert('Please describe your problem in more detail.');return}document.getElementById('s1').style.display='none';document.getElementById('s2').style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
-function goBack(){document.getElementById('s2').style.display='none';document.getElementById('s1').style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
-function pickCat(el,cat){document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');category=cat;document.getElementById('aBtn').disabled=false}
-function reset(){category=null;files=[];document.getElementById('sitTa').value='';document.getElementById('flist').innerHTML='';document.getElementById('charCt').textContent='0 characters';document.getElementById('vstat').textContent='';document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));document.getElementById('aBtn').disabled=true;document.getElementById('s1').style.display='block';document.getElementById('s2').style.display='none';document.getElementById('result').classList.remove('show');window.scrollTo({top:0,behavior:'smooth'})}
+function goS2(){const t=document.getElementById('sitTa').value.trim();if(t.length<20){alert('Please describe your problem in more detail.');return}document.getElementById('s1').style.display='none';window.scrollTo({top:0,behavior:'smooth'})}
+function goBack(){document.getElementById('s1').style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
+function pickCat(el,cat){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');
+  category=cat;
+  const label=el.querySelector('.cn')?.textContent||cat;
+  const el2=document.getElementById('catSelected');
+  if(el2) el2.textContent='✅ Selected: '+label;
+}
+function reset(){
+  category=null;
+  files=[];
+  document.getElementById('sitTa').value='';
+  document.getElementById('flist').innerHTML='';
+  document.getElementById('charCt').textContent='0 characters';
+  document.getElementById('vstat').textContent='';
+  const cs=document.getElementById('catSelected');
+  if(cs) cs.textContent='';
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));
+  document.getElementById('s1').style.display='block';
+  document.getElementById('result').classList.remove('show');
+  document.querySelectorAll('.err-card').forEach(e=>e.remove());
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 function showLoad(){document.getElementById('loading').classList.add('on');const ids=['ls1','ls2','ls3','ls4','ls5','ls6'];let i=0;loadT=setInterval(()=>{if(i>0)document.getElementById(ids[i-1]).classList.remove('lit');if(i<ids.length){document.getElementById(ids[i]).classList.add('lit');i++}},900)}
 function hideLoad(){clearInterval(loadT);document.getElementById('loading').classList.remove('on');['ls1','ls2','ls3','ls4','ls5','ls6'].forEach(id=>document.getElementById(id).classList.remove('lit'))}
 async function doAnalysis(){
   const situation=document.getElementById('sitTa').value.trim();
-  if(!situation||!category)return;
+  if(situation.length<20){
+    alert('Please describe your problem in a bit more detail before proceeding.');
+    document.getElementById('sitTa').focus();
+    return;
+  }
+  // Category is optional — default to 'general' if not selected
+  const effectiveCat = category || 'general';
   const langName=LANGS.find(l=>l.c===lang)?.e||'English';
-  const fileCtx=files.length?'\nUser has uploaded: '+files.map(f=>f.name).join(', '):'' ;
-  showLoad();document.getElementById('s2').style.display='none';document.getElementById('result').classList.remove('show');
+  const fileCtx=files.length?'\nUser has uploaded: '+files.map(f=>f.name).join(', '):'';
+  showLoad();
+  document.getElementById('result').classList.remove('show');
+  document.querySelectorAll('.err-card').forEach(e=>e.remove());
   const SYSTEM=`You are Nyay Saathi, a free AI legal guidance system for ordinary Indian citizens who have little or no knowledge of law. Users are common people — farmers, workers, traders, retired employees — who cannot afford a lawyer for initial advice.
 
 Answer EXACTLY THREE QUESTIONS:
@@ -390,6 +452,12 @@ Q2 (if YES or MAYBE): Win chances based on similar decided cases. Give realistic
 Q3 (always, especially if NO): Specific alternatives with exact step-by-step instructions. Name the exact office/portal/helpline. Prioritise FREE options: Consumer Forum, Labour Court, Lok Adalat, NALSA, Public Grievance Portals, District Collector, Police, RTI, Mediation. Instructions must be simple enough for an illiterate person to follow with help.
 
 RULES: Respond only in ${langName}. Be compassionate but brutally honest. Give specific actions not vague suggestions. Always mention NALSA for free legal aid. Respond ONLY with valid JSON — no text outside JSON.
+
+SPECIAL CATEGORY GUIDANCE:
+- digital / social media FIR: Cover IT Act 2000 (Sections 66A struck down by SC, 66C, 66D), BNS 2023 (Section 356 defamation, Section 353 statements conducing to public mischief), constitutional protection under Article 19(1)(a) free speech, landmark SC judgments like Shreya Singhal v Union of India 2015. Key steps: anticipatory bail u/s 482 BNSS, quashing FIR in High Court, jurisdiction challenge if FIR in another state, importance of not travelling to that state without anticipatory bail.
+- land_acquisition: Cover Right to Fair Compensation and Transparency in Land Acquisition Rehabilitation and Resettlement Act 2013 (LARR Act), Section 11 notification, Section 19 declaration, compensation enhancement petition before Land Acquisition Collector, reference to District Court under Section 64, High Court writ.
+- cyber: Cover IT Act 2000 (Sections 43, 66, 66C, 66D, 66F), BNS 2023 cyber provisions, National Cyber Crime Reporting Portal cybercrime.gov.in helpline 1930, bank chargeback process, RBI guidelines on unauthorised transactions.
+- domestic: Cover Protection of Women from Domestic Violence Act 2005, Section 498A IPC/BNS, Section 125 CrPC maintenance, Protection Order, Residence Order, Monetary Relief, role of Protection Officer, One Stop Centres (181 helpline), NALSA legal aid.
 
 JSON:
 {
@@ -411,7 +479,7 @@ JSON:
   "free_aid_info":"<NALSA and local legal services info>",
   "disclaimer":"<short disclaimer in ${langName}>"
 }`;
-  const USER=`Category: ${category}\nLanguage: ${langName}\nGrievance: ${situation}${fileCtx}\n\nAnswer all 3 questions and provide JSON.`;
+  const USER=`Category: ${effectiveCat}\nLanguage: ${langName}\nGrievance: ${situation}${fileCtx}\n\nAnswer all 3 questions and provide JSON.`;
 
   // Get saved provider + key
   let provider = localStorage.getItem('ns_provider')||'';
@@ -419,7 +487,7 @@ JSON:
 
   if(!provider||!apiKey){
     hideLoad();
-    document.getElementById('s2').style.display='block';
+    
     showKeySetup(()=>doAnalysis());
     return;
   }
@@ -430,7 +498,7 @@ JSON:
     localStorage.removeItem('ns_api_key');
     localStorage.removeItem('ns_provider');
     hideLoad();
-    document.getElementById('s2').style.display='block';
+    
     showKeySetup(()=>doAnalysis(),'⚠️ Saved API key is invalid. Please re-enter.');
     return;
   }
@@ -522,7 +590,7 @@ JSON:
 
   }catch(err){
     hideLoad();
-    document.getElementById('s2').style.display='block';
+    
     document.getElementById('result').classList.remove('show');
     showErr(err.message||'Unknown error. Please check your connection and try again.');
     console.error('Nyay Saathi error:',err);
